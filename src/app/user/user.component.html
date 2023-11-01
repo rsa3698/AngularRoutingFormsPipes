@@ -1,0 +1,23 @@
+<div>
+    <div>
+        User with id : {{user.id}}
+    </div>
+    <div>
+        User with User Name : {{user.name}}
+    </div>
+</div>
+
+
+<div>
+    <a [routerLink]="['/users',1 ,'Aditi']" [queryParams]="{page:1 ,search:'raudra'}">Get Details of Me</a>
+</div>
+
+
+<div>
+    <button (click)="getRouterDetails()">Click Me Again!</button>
+</div>
+
+
+<div>
+    <button (click)="onUserEdit()">Click on Edit</button>
+</div>

@@ -1,27 +1,103 @@
-# AngularRoutingFormsPipes
+1. Introduction to Angular Routing. Set up and load routes with RouterModule in angular.
+ <li class="nav-item"><a href="/users">Users</a></li> - In this case we have page loads every single time which is not SPA behaviour
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.7.
+2. Navigating Links in the Page using RouterLink in the angular.
+  <li class="nav-item"><a routerLink="/">Home</a></li>
 
-## Development server
+3. We can use routerLink as property binding also  mostly for dynamic Purpose
+  <li class="nav-item"><a [routerLink]="['/users']">Users</a></li>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+4. Styling the Active Router Link using routerLinkActive and routerLinkActiveOptions in angular.
+ <li class="nav-item"><a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a></li>
+ This routerLinkActiveOptions is to resolve parent child routing issues for exact path matching
 
-## Code scaffolding
+5. Navigate between pages using router programmatically in Typescript code in angular.
+ onCategoriesClick(){
+    this.router.navigateByUrl('/categories'); - Way 1
+    this.router.navigate(['categories']); - Way 2
+  }
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+6. Passing and Fetching Parameters to Routes using ActivatedRoute snapshot in Angular. 
+Use ActivatedRoute instead of Router for getting status of active route.
 
-## Build
+In app Module :
+{ path: 'users/:id/:name' , component : UserComponent},
+user : { id: number ; name:string};
+  constructor(private route: ActivatedRoute){
+    
+  }
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+  ngOnInit(){
+    this.user ={
+      id : this.route.snapshot.params['id'],
+      name : this.route.snapshot.params['name']
+    };
 
-## Running unit tests
+7. Fetch Route Parameters Reactively using Params Subscribe with ActivatedRoute in angular.
+ this.route.params.subscribe((data)=>{
+      this.user= {
+        id: data['id'],
+        name: data['name']
+      }
+    })
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+8. Passing Query Parameters and Fragments to the Url Route with the Template and Program in Angular
 
-## Running end-to-end tests
+Template:
+<div>
+    <a [routerLink]="['/users',1 ,'Aditi']" [queryParams]="{page:1 ,search:'raudra'}">Get Details of Me</a>
+</div>
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Program :
 
-## Further help
+<div>
+    <button (click)="getRouterDetails()">Click Me Again!</button>
+</div>
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+  getRouterDetails(){
+    this.router.navigate(['/users',2,'Rama'], {
+      queryParams: { page:3 , search:'RSA'},
+      fragment: 'current'
+
+    })
+  }
+
+10. Retrieving Query Parameters and Fragments from the URL through Typescript Code in the angular?
+
+    
+    console.log(this.route.snapshot.queryParams);
+    console.log(this.route.snapshot.fragment);
+    Best Way:
+    this.route.queryParams.subscribe((data)=>{
+      console.log(data);
+    })
+
+    this.route.fragment.subscribe((data)=>{
+      console.log(data);
+    })
+
+11. Setting up the child or Nested Routes using the children key in routing module in the Angular. 
+    DO:
+    { path: 'users' ,
+    component : UsersComponent,
+    children : [{path: ':id/:name' , component:UserComponent}]},
+
+    DON'T
+    // { path: 'users/:id/:name' , component : UserComponent},
+
+12. Preserve or merge the query parameters by forwarding with queryparamsHandling in Angular.
+
+     onUserEdit(){
+    this.router.navigate(['/users', this.user.id , this.user.name, 'edit'] , {
+      queryParamsHandling : 'preserve'
+    })
+  }
+
+13.  Implement Custom 404 Page adding wildcard Route, redirectTo option in the angular routing module.
+   
+   { path: 'not-found' , component : PageNotFoundComponent},
+   { path: '**' , redirectTo: 'not-found'}
+   
+14. Separate all the Routing configuration code into another file app-routing.module in the angular.
+
+   Check this file app-routing.module.ts
