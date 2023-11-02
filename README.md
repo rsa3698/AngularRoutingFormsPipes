@@ -118,3 +118,63 @@ Program :
   ],
   exports :[RouterModule]
 })
+
+22. Understand the core of the Observables in rxjs. Need of subscribe & unsubscribe in the angular.
+
+  ngOnInit(){
+    this.route.data.subscribe((data : Data)=>{
+      console.log(data);
+    })
+
+    this.intervalSubscription=interval(1000).subscribe(count=>{
+      console.log(count)
+    })
+  }
+
+  ngOnDestroy(){
+    this.intervalSubscription.unsubscribe();
+  }
+
+23. Create our own custom Observable in rxjs. How to use observer.next option in the angular.
+
+24. Catch Errors & Complete in rxjs custom observable using observer.error and complete in angular.
+
+
+25. Understand rxjs Operators in the observables before sending to the subscribe data in angular.
+
+26. Apply multiple operators in the rxjs observables. Know more about the operators in rxjs angular.
+this.intervalSubscription = customObservable.pipe(filter((data:number)=>{
+      if(data>0)
+      return true;
+      else
+      return false;
+
+    }),map((data:number)=>{return 'count is ' + data+1})).subscribe(data=>{
+      console.log(data);
+    },error =>{
+      console.log(error)
+    },
+    ()=>{
+      console.log('complete')
+    })
+
+27. Understand the Subjects in rxjs angular. Implement the Subject for cross-component communication
+    (best method and need to unsubscribe it)
+
+     // userAddedEvent = new EventEmitter<boolean>;
+     userAddedEvent = new Subject<boolean>;
+       userAddedSubscription : Subscription
+  constructor(private authService : AuthService , private userService : UserService){
+
+  }
+
+  ngOnInit(){
+    this.userAddedSubscription=this.userService.userAddedEvent.subscribe((data)=>{
+      this.userAdded = data;
+    })
+  }
+
+    ngOnDestroy(){
+   this.userAddedSubscription.unsubscribe();
+  }
+
