@@ -1,5 +1,16 @@
 <div class="container">
   <div class="row">
+    <div class="col-md-12">
+      <button (click)="onLoginClick()">Login</button>
+      <button (click)="onLogOutClick()">LogOut</button>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container">
+  <div class="row">
     <div class="col-md-3">
       <ul class="nav flex-column">
         <li class="nav-item"><a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a></li>

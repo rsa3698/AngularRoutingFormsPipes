@@ -10,6 +10,13 @@ import { UserComponent } from './user/user.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AuthService } from './services/auth.service';
+import { AuthGuardsService } from './services/guards/auth-guard.service';
+import { DeactivateGuardService } from './services/guards/deactivate-guard.service';
+import { FormsModule } from '@angular/forms';
+import { UserResolveService } from './services/resolvers/user-resolve.service';
+import { UserService } from './services/user.service';
+
 
 
 
@@ -25,9 +32,9 @@ import { AppRoutingModule } from './app-routing.module';
     EditUserComponent
   ],
   imports: [
-    BrowserModule,AppRoutingModule
+    BrowserModule,AppRoutingModule,FormsModule
   ],
-  providers: [],
+  providers: [AuthService , AuthGuardsService ,DeactivateGuardService, UserResolveService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

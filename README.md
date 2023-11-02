@@ -101,3 +101,20 @@ Program :
 14. Separate all the Routing configuration code into another file app-routing.module in the angular.
 
    Check this file app-routing.module.ts
+
+15. Introduction to Routing Guards. Implementation of canActivate Route Guard in the angular.
+16. Implement canActivateChild Route Guard for the Nested Child Routes in the Angular.
+17. Controlling Navigation with CanDeactivate Route Guard in the angular
+18. Implementing CanDeactivate Route Guard in the real-time scenario for the component - Angular.
+19. Passing Static Data to the Route and also Access the static data in the typescript in angular.
+20. Get Dynamic Data before entering into the component using the Resolve Guard in Angular
+
+21. How to use Hash Urls as Fragments in the url for the internal pages in the angular routing
+
+@NgModule({
+  declarations: [],
+  imports: [
+    RouterModule.forRoot(appRoutes , {useHash:true})
+  ],
+  exports :[RouterModule]
+})
