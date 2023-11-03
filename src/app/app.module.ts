@@ -16,6 +16,7 @@ import { DeactivateGuardService } from './services/guards/deactivate-guard.servi
 import { FormsModule } from '@angular/forms';
 import { UserResolveService } from './services/resolvers/user-resolve.service';
 import { UserService } from './services/user.service';
+import { TemplateFormComponent } from './template-form/template-form.component';
 
 
 
@@ -29,7 +30,8 @@ import { UserService } from './services/user.service';
     RolesComponent,
     UserComponent,
     PageNotFoundComponent,
-    EditUserComponent
+    EditUserComponent,
+    TemplateFormComponent
   ],
   imports: [
     BrowserModule,AppRoutingModule,FormsModule

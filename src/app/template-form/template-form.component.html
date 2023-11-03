@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form (ngSubmit)="onFormSubmit()" #formTemplate="ngForm">
+
+                <button class="btn btn-sm btn-info"(click)="fillData()">Fill Data</button>
+                <button class="btn btn-sm btn-info"(click)="fillPartialData()">Fill Partial Data</button>
+                <div *ngIf="!userData.valid && userData.touched">User Data is Invalid</div>
+                <div ngModelGroup="userData"   #userData="ngModelGroup">
+                    <div class="form-group">
+                        <label for="userName">User Name</label>
+                        <input type="text" class="form-control" id="userName" name="userName" (input)="checkData()" ngModel required>
+                      </div>
+    
+                      <div class="form-group">
+                        <label for="emailId">Email</label>
+                        <input type="email" class="form-control" id="emailId" name="emailId" ngModel email>
+                      </div>
+                </div>
+               
+               
+
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select class="form-control" id="gender" name="gender" [(ngModel)]="gender" >
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+
+                <div class="mt-2">
+                    <button type="submit" class="btn btn-primary" [disabled]="!formTemplate.valid">Submit</button>
+                </div>
+            </form>
+            <div *ngIf="isSubmitted" class="container">
+                <div>User Data</div>
+                <div>User Name : {{user.userName}}</div>
+                <div>Email ID : {{user.emailId}}</div>
+                <div>Gender : {{user.gender}}</div>
+            </div>
+           
+        </div>
+    </div>
+</div>

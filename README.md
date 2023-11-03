@@ -178,3 +178,37 @@ this.intervalSubscription = customObservable.pipe(filter((data:number)=>{
    this.userAddedSubscription.unsubscribe();
   }
 
+TEMPLATE DRIVEN FORMS
+
+1. Template Driven Forms in Angular. Get NgForm Object from the template to code in Angular.
+     <form (ngSubmit)="onFormSubmit(formTemplate)" #formTemplate="ngForm">
+                <div class="form-group">
+                    <label for="userName">User Name</label>
+                    <input type="text" class="form-control" id="userName" name="userName" ngModel>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="emailId">User Name</label>
+                    <input type="email" class="form-control" id="emailId" name="emailId" ngModel>
+                  </div>
+               
+
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select class="form-control" id="gender" name="gender" ngModel>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+
+                <div class="mt-2">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+2.  Advantages of using ViewChild in the Template Driven Form to get Form Object in angular.
+3.  Explore the Form Object in the Template Driven Forms in the Angular.
+4.  Validations for the Template Driven Forms. Show Validation Messages for the Form in Angular.
+5.  Using ngModel for Two Way & One Way Binding to populate Data in Template Driven Forms - Angular
+6.  NgModelGroup - Grouping The Form Controls in Template Driven Forms using ngModelGroup in angular
+7.  Set Value and Patch Value for populating Form Elements in the Template Driven Forms in Angular.
+8.  Get and Reset the Form Data controls in the Template Driven Forms in the Angular
