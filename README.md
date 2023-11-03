@@ -211,4 +211,69 @@ TEMPLATE DRIVEN FORMS
 5.  Using ngModel for Two Way & One Way Binding to populate Data in Template Driven Forms - Angular
 6.  NgModelGroup - Grouping The Form Controls in Template Driven Forms using ngModelGroup in angular
 7.  Set Value and Patch Value for populating Form Elements in the Template Driven Forms in Angular.
-8.  Get and Reset the Form Data controls in the Template Driven Forms in the Angular
+8.  Get and Reset the Form Data controls in the Template Driven Forms in the Angular.
+
+
+REACTIVE FORM
+
+1. Introduction to Reactive Forms Approach. Create FormGroup and FormControl with code in Angular.
+
+ this.signUpForm = new FormGroup({
+      'userData': new FormGroup({
+        'username': new FormControl(null, [Validators.required, this.isRestrictedNames.bind(this)]),
+        'email': new FormControl(null, [Validators.required, Validators.email], [this.isRestrictedEmails]),
+      }),
+
+      'gender': new FormControl('female'),
+      'hobbies': new FormArray([])
+    });
+
+Import ReactiveFormsModule
+
+2. Attach the HTML File using the FormGroup with FormControlName using Reactive Forms in Angular.
+   <form [formGroup]="signUpForm" (ngSubmit)='onSubmit()'>
+   <input type="text" class="form-control" formControlName="username">
+
+3. Apply Validations for Reactive Forms and also show messages in the HTML Template - Angular.
+    
+    *ngIf="!signUpForm.get('userData.username').valid && signUpForm.get('userData.username').touched">
+
+      'username': new FormControl(null, [Validators.required, this.isRestrictedNames.bind(this)]),
+        'email': new FormControl(null, [Validators.required, Validators.email], [this.isRestrictedEmails]),
+4. Grouping the Controls in the Reactive Forms using FormGroupName in FormGroup - Angular.
+       this.signUpForm = new FormGroup({
+      'userData': new FormGroup({
+        'username': new FormControl(null, [Validators.required, this.isRestrictedNames.bind(this)]),
+        'email': new FormControl(null, [Validators.required, Validators.email], [this.isRestrictedEmails]),
+      }),
+
+      'gender': new FormControl('female'),
+      'hobbies': new FormArray([])
+    });
+
+     <div formGroupName="userData">
+                    <div class="form-group">
+                        <label>UserName</label>
+                        <input type="text" class="form-control" formControlName="username">
+                        <span class="help-block"
+                            *ngIf="!signUpForm.get('userData.username').valid && signUpForm.get('userData.username').touched">
+                            <span *ngIf="signUpForm.get('userData.username').errors">Username is
+                                required</span>
+                            <span *ngIf="signUpForm.get('userData.username').errors">Username is not
+                                valid</span>
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="text" class="form-control" formControlName="email">
+                        <span class="help-block"
+                            *ngIf="!signUpForm.get('userData.email').valid && signUpForm.get('userData.email').touched">Please
+                            enter valid
+                            Email</span>
+                    </div>
+                </div>
+
+5. Dynamically Add Form Controls with FormArray FormArrayName in the Reactive Forms - Angular.
+6. Create Custom Validations for the reactive Forms in the Angular.
+7. Create a Custom Asynchronous Validator in the Reactive Forms - Angular
+8. Explore StatusChanges, ValueChanges, SetValue, PatchValue, and reset in Reactive Forms - Angular

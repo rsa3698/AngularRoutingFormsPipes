@@ -10,6 +10,7 @@ import { AuthGuardsService } from './services/guards/auth-guard.service';
 import { DeactivateGuardService } from './services/guards/deactivate-guard.service';
 import { UserResolveService } from './services/resolvers/user-resolve.service';
 import { TemplateFormComponent } from './template-form/template-form.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 const appRoutes : Routes =[
   { path: '' , component : HomeComponent , data:{page: 1, search: 'RSA'}},
@@ -25,6 +26,7 @@ const appRoutes : Routes =[
   // { path: 'users/:id/:name' , component : UserComponent},
   { path: 'categories' , component : CategoriesComponent},
   { path: 'template-form' ,component : TemplateFormComponent},
+  { path: 'reactive-form' ,component : ReactiveFormComponent},
   { path: 'not-found' , component : PageNotFoundComponent},
   { path: '**' , redirectTo: 'not-found'}
 ]
