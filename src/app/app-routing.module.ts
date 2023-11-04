@@ -11,6 +11,7 @@ import { DeactivateGuardService } from './services/guards/deactivate-guard.servi
 import { UserResolveService } from './services/resolvers/user-resolve.service';
 import { TemplateFormComponent } from './template-form/template-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { FilterPipesComponent } from './filter-pipes/filter-pipes.component';
 
 const appRoutes : Routes =[
   { path: '' , component : HomeComponent , data:{page: 1, search: 'RSA'}},
@@ -27,6 +28,7 @@ const appRoutes : Routes =[
   { path: 'categories' , component : CategoriesComponent},
   { path: 'template-form' ,component : TemplateFormComponent},
   { path: 'reactive-form' ,component : ReactiveFormComponent},
+  { path: 'filter-pipes' ,component : FilterPipesComponent},
   { path: 'not-found' , component : PageNotFoundComponent},
   { path: '**' , redirectTo: 'not-found'}
 ]

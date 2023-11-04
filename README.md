@@ -277,3 +277,12 @@ Import ReactiveFormsModule
 6. Create Custom Validations for the reactive Forms in the Angular.
 7. Create a Custom Asynchronous Validator in the Reactive Forms - Angular
 8. Explore StatusChanges, ValueChanges, SetValue, PatchValue, and reset in Reactive Forms - Angular
+
+
+Pipes
+
+1. Pipes in Angular. Chaining Multiple Pipes, parameterized Pipes in the Angular.
+2. Create a custom Pipe and pass parameters to the Pipe in Angular using Transform method - Angular
+3. Creating Filter Pipe in the Angular. Filter the list of data with search string in Angular.
+4. Pure and Impure Pipes. Difference between the pure pipe and impure pipe in the Angular.
+5. Understanding the async (Asynchronous) Pipe. How to use Async Pipe in the Angular.
