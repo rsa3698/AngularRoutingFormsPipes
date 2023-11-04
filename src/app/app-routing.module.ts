@@ -12,6 +12,7 @@ import { UserResolveService } from './services/resolvers/user-resolve.service';
 import { TemplateFormComponent } from './template-form/template-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { FilterPipesComponent } from './filter-pipes/filter-pipes.component';
+import { PostComponent } from './post/post.component';
 
 const appRoutes : Routes =[
   { path: '' , component : HomeComponent , data:{page: 1, search: 'RSA'}},
@@ -30,6 +31,7 @@ const appRoutes : Routes =[
   { path: 'reactive-form' ,component : ReactiveFormComponent},
   { path: 'filter-pipes' ,component : FilterPipesComponent},
   { path: 'not-found' , component : PageNotFoundComponent},
+  { path: 'post' , component:PostComponent},
   { path: '**' , redirectTo: 'not-found'}
 ]
 

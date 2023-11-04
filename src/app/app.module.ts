@@ -21,6 +21,8 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { FilterPipesComponent } from './filter-pipes/filter-pipes.component';
 import { ShortenPipe } from './pipes/shorten.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
+import { PostComponent } from './post/post.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -39,10 +41,11 @@ import { FilterPipe } from './pipes/filter.pipe';
     ReactiveFormComponent,
     FilterPipesComponent,
     ShortenPipe,
-    FilterPipe
+    FilterPipe,
+    PostComponent
   ],
   imports: [
-    BrowserModule,AppRoutingModule,FormsModule,ReactiveFormsModule
+    BrowserModule,AppRoutingModule,FormsModule,ReactiveFormsModule, HttpClientModule
   ],
   providers: [AuthService , AuthGuardsService ,DeactivateGuardService, UserResolveService, UserService],
   bootstrap: [AppComponent]

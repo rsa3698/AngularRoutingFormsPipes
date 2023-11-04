@@ -286,3 +286,10 @@ Pipes
 3. Creating Filter Pipe in the Angular. Filter the list of data with search string in Angular.
 4. Pure and Impure Pipes. Difference between the pure pipe and impure pipe in the Angular.
 5. Understanding the async (Asynchronous) Pipe. How to use Async Pipe in the Angular.
+
+
+HttpRequest
+
+1. Introduction to Http Request. Make a Http Post Request Call through HttpClientModule - Angular.
+2. Make Http Get Request and use RxJs Operators to transform the response in the Angular.
+3. 
