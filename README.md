@@ -292,4 +292,19 @@ HttpRequest
 
 1. Introduction to Http Request. Make a Http Post Request Call through HttpClientModule - Angular.
 2. Make Http Get Request and use RxJs Operators to transform the response in the Angular.
-3. 
+4. Define the Types of HttpClient Request Data using the interface and Generic Type in the Angular.
+5. Using Services for Http request with HttpClient. Communicate Services and Components in Angular.
+6. Implement HTTP Delete Request with HttpClient in Angular.
+7. Error Handling in the Http Request Calls with HTTPClient
+8. Sending HTTP Headers in the API Request Call with HTTPClient in the angular.
+9. Adding Query Params for the Url using HttpParams Object in HttpClient
+10. Observe different types of response in HttpClient and Changing the Response Body Type
+11. Introducing HTTP Interceptors using HTTP_INTERCEPTORS in Angular.
+12. Manipulating Request Objects, headers with Interceptors in the Angular.
+13. Accessing Http Response Event Object with Response Interceptors in the Angular.
+14. Adding Multiple Interceptors for the HTTP Request. Interceptors executing order in Angular.
+
+
+Authentication
+
+1. Authentication - Design the auth (Login) page in the angular

@@ -22,7 +22,9 @@ import { FilterPipesComponent } from './filter-pipes/filter-pipes.component';
 import { ShortenPipe } from './pipes/shorten.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { PostComponent } from './post/post.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { AuthInterceptorService } from './services/auth-interceptors.service';
+import { LoggingInterceptorService } from './services/logging-interceptor.service';
 
 
 
@@ -47,7 +49,17 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,AppRoutingModule,FormsModule,ReactiveFormsModule, HttpClientModule
   ],
-  providers: [AuthService , AuthGuardsService ,DeactivateGuardService, UserResolveService, UserService],
+  providers: [AuthService , AuthGuardsService ,DeactivateGuardService, UserResolveService, UserService , {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptorService,
+    multi: true,
+  },
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: LoggingInterceptorService,
+    multi: true,
+  },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
