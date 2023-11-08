@@ -22,7 +22,7 @@ export class AppComponent implements OnInit , OnDestroy{
     })
   }
   onLoginClick(){
-   this.authService.logIn();
+   //this.authService.login();
 
   }
 

@@ -25,6 +25,8 @@ import { PostComponent } from './post/post.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptorService } from './services/auth-interceptors.service';
 import { LoggingInterceptorService } from './services/logging-interceptor.service';
+import { AuthComponent } from './auth/auth/auth.component';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 
 
 
@@ -44,7 +46,9 @@ import { LoggingInterceptorService } from './services/logging-interceptor.servic
     FilterPipesComponent,
     ShortenPipe,
     FilterPipe,
-    PostComponent
+    PostComponent,
+    AuthComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,AppRoutingModule,FormsModule,ReactiveFormsModule, HttpClientModule

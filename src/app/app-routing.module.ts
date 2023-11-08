@@ -13,6 +13,7 @@ import { TemplateFormComponent } from './template-form/template-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { FilterPipesComponent } from './filter-pipes/filter-pipes.component';
 import { PostComponent } from './post/post.component';
+import { AuthComponent } from './auth/auth/auth.component';
 
 const appRoutes : Routes =[
   { path: '' , component : HomeComponent , data:{page: 1, search: 'RSA'}},
@@ -30,6 +31,7 @@ const appRoutes : Routes =[
   { path: 'template-form' ,component : TemplateFormComponent},
   { path: 'reactive-form' ,component : ReactiveFormComponent},
   { path: 'filter-pipes' ,component : FilterPipesComponent},
+  { path: 'auth' ,component : AuthComponent},
   { path: 'not-found' , component : PageNotFoundComponent},
   { path: 'post' , component:PostComponent},
   { path: '**' , redirectTo: 'not-found'}
