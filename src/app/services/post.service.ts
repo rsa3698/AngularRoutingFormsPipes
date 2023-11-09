@@ -1,14 +1,15 @@
 import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Post } from "../post/post.model";
-import { map } from "rxjs";
+import { map, switchMap, take, tap } from "rxjs";
+import { AuthService } from "./auth.service";
 
 @Injectable({providedIn:'root'})
 
 export class PostService{
     posts : Post[];
-  constructor(private http: HttpClient){
-   
+  constructor(private http: HttpClient , private authService:AuthService){
+
   }
 
  createPost(postData : Post){
@@ -22,19 +23,9 @@ export class PostService{
   }
 
   fetchPosts() {
-    let searchParams = new HttpParams();
-    searchParams = searchParams.append('custom' , 'Hi');
-    searchParams = searchParams.append('name' , 'RSA');
     return this.http
       .get<{ [key: string]: Post }>(
-        `https://ng-new-database-715a8-default-rtdb.firebaseio.com/post.json` ,{
-            headers : new HttpHeaders({
-                'custom-headers' : 'posts-RSA'
-                }),
-            // params : new HttpParams().set('custom','name')
-            params : searchParams
-        }
-
+        `https://ng-new-database-715a8-default-rtdb.firebaseio.com/post.json`
       )
       .pipe(
         map((response) => {
@@ -46,7 +37,6 @@ export class PostService{
         })
       );
   }
-
 
   clearPosts(){
     this.http.delete('https://ng-new-database-715a8-default-rtdb.firebaseio.com/post.json').subscribe(

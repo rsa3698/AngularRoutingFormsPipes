@@ -18,8 +18,8 @@
     <div class="row">
         <div class="col-md-12">
             <div *ngFor="let user of users | filter:filteredstring" class="my-3">
-                <div>Name : {{user.name | shorten:10}}</div>
-                <div>Joining Date : {{user.joinedDate | date : 'fullDate'}}</div>
+                <div>Name : {{user.name | shorten:10 | uppercase}}</div>
+                <div>Joining Date : {{user.joinedDate | date : 'fullDate' | uppercase}}</div>
             </div>
         </div>
     </div>

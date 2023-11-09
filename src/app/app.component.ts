@@ -17,6 +17,7 @@ export class AppComponent implements OnInit , OnDestroy{
   }
 
   ngOnInit(){
+    this.authService.autoLogin();
     this.userAddedSubscription=this.userService.userAddedEvent.subscribe((data)=>{
       this.userAdded = data;
     })
@@ -27,7 +28,7 @@ export class AppComponent implements OnInit , OnDestroy{
   }
 
   onLogOutClick(){
-   this.authService.logOut();
+   this.authService.logout();
   }
 
   ngOnDestroy(){
