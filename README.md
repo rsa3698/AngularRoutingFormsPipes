@@ -308,3 +308,21 @@ HttpRequest
 Authentication
 
 1. Authentication - Design the auth (Login) page in the angular
+2. Apply Template Driven Approach and implement Validations for the authentication form - Angular
+3. Authentication - Perform Signup Request and get the token & expiresIn as Response - Angular
+4. Authentication - Improve Error Messages with CatchError and throwError rxjs operators - Angular
+5. Authentication - Send the login request and use Observable for the HTTP in the angular.
+6. Authentication - Create and Store the User Token Data in the angular
+7. Authentication - Send Auth Token to the outgoing HTTP Requests with behavior Subject - Angular.
+8. Authentication - Add the auth token as parameter using Interceptors - Angular
+9. Authentication - Adding the Logout Functionality by removing the auth token in Angular
+10. Authentication - Saving Token in LocalStorage for the autologin feature - Angular
+11. Authentication - Auto-Logout the user when the token expired - Angular.
+12. Create Component Dynamically using ComponentFactoryResolver and ViewContainerRef in Angular.
+13. Access the Component properties and methods with ComponentRef instance in Angular.
+
+Modules
+
+1. Adding Routes to the Feature Module. forChild, forRoot differences in Router Module - Angular
+2. Understand Core Module. Move all services, Interceptors from appModule to CoreModule - Angular
+3. Implement Lazy Loading for Modules in the Angular to increase the performance of the project.
