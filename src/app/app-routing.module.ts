@@ -1,20 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CategoriesComponent } from './categories/categories.component';
-import { EditUserComponent } from './edit-user/edit-user.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { UserComponent } from './user/user.component';
-import { UsersComponent } from './users/users.component';
-import { AuthGuardsService } from './services/guards/auth-guard.service';
-import { DeactivateGuardService } from './services/guards/deactivate-guard.service';
-import { UserResolveService } from './services/resolvers/user-resolve.service';
+
 import { TemplateFormComponent } from './template-form/template-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { FilterPipesComponent } from './filter-pipes/filter-pipes.component';
-import { PostComponent } from './post/post.component';
 import { AuthComponent } from './auth/auth/auth.component';
-import { AuthGuard } from './services/guards/auth.guard';
+
 
 const appRoutes : Routes =[
   { path: '' , component : HomeComponent , data:{page: 1, search: 'RSA'}},
